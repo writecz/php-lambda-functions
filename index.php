@@ -1,10 +1,8 @@
 <?php
 
-use Psr\Http\Message\ServerRequestInterface;
+#use Psr\Http\Message\ServerRequestInterface;
 
-function hello_world(ServerRequestInterface $request)
+function hello_world()
 {
-    $data = $request->getBody();
-    if(isnull($data)) return '{}';
-    return json_encode(str_word_count($data['message']));
+    return json_encode(func_get_args();
 }
